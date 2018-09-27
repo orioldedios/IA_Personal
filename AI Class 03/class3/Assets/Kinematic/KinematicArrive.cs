@@ -22,7 +22,7 @@ public class KinematicArrive : MonoBehaviour {
 
         //move.target.transform.position
 
-        Vector3 speed_vector;
+        Vector3 speed_vector = move.mov_velocity;
 
        if (Vector3.Distance(transform.position, move.target.transform.position) < min_distance)
         {
@@ -30,7 +30,7 @@ public class KinematicArrive : MonoBehaviour {
         }
         else
         {
-            speed_vector = move.mov_velocity / time_to_target;
+            speed_vector *= Vector3.Distance(transform.position, move.target.transform.position) * time_to_target;
         }
 
         move.SetMovementVelocity(speed_vector);

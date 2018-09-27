@@ -8,8 +8,9 @@ public class Move : MonoBehaviour {
 	public GameObject aim;
 	public Slider arrow;
 	public float max_mov_velocity = 5.0f;
+    public float arrow_len = 1.0f;
 
-	public Vector3 mov_velocity = Vector3.zero;
+    public Vector3 mov_velocity = Vector3.zero;
 
 	// Use this for initialization
 	public void SetMovementVelocity (Vector3 vel) {
@@ -34,7 +35,7 @@ public class Move : MonoBehaviour {
         // TODO 3: stretch it the arrow (arrow.value) to show how fast the tank is getting push in
         // that direction. Adjust with some factor so the arrow is visible.
 
-        arrow.value *= mov_velocity.magnitude;
+        arrow.value *= arrow_len;
 
         // TODO 4: update tank position based on final mov_velocity and deltatime
 
