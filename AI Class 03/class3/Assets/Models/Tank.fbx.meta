@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 002e2a607f5b64c48be0b3b0d8b8bfdd
 ModelImporter:
-  serializedVersion: 23
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: LeftTrackjoint1
     100002: LeftTrackjoint10
@@ -519,8 +519,6 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
