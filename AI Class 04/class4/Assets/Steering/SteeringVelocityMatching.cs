@@ -19,9 +19,13 @@ public class SteeringVelocityMatching : MonoBehaviour {
 	{
 		if(target_move)
 		{
-			// TODO 5: First come up with your ideal velocity
-			// then accelerate to it.
+            // TODO 5: First come up with your ideal velocity
+            // then accelerate to it.
+            Vector3 ideal_v = target_move.movement;
 
-		}
+            Vector3 ideal_v_increment = ideal_v - move.movement;
+            Vector3 ideal_a = Vector3.ClampMagnitude((ideal_v_increment / time_to_target), move.max_mov_acceleration);
+            move.AccelerateMovement(ideal_a);
+                    }
 	}
 }

@@ -32,19 +32,20 @@ public class SteeringArrive : MonoBehaviour {
 
         float distance_to_t = Vector3.Distance(target, transform.position);
 
+
         if (distance_to_t < slow_distance)
         {
             Vector3 ideal_v = new Vector3(0.0f, 0.0f, 0.0f);
             ideal_v = (target - transform.position) / time_to_target;
-
-            Vector3 ideal_a = ideal_v / time_to_target;
+            Vector3 ideal_v_increment = ideal_v - move.movement;
+            Vector3 ideal_a = Vector3.ClampMagnitude((ideal_v_increment / time_to_target),move.max_mov_acceleration);
             move.AccelerateMovement(ideal_a);
         }
         else
         {
             move.AccelerateMovement(Vector3.Normalize(target - transform.position) * move.max_mov_acceleration);
         }
-	}
+    }
 
 	void OnDrawGizmosSelected() 
 	{

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SteeringPursue : MonoBehaviour {
 
-	public float max_prediction;
+	public float max_prediction = 3.0f;
 
 	Move move;
 	SteeringArrive arrive;
@@ -22,8 +22,11 @@ public class SteeringPursue : MonoBehaviour {
 
 	public void Steer(Vector3 target, Vector3 velocity)
 	{
-		// TODO 6: Create a fake position to represent
-		// enemies predicted movement. Then call Steer()
-		// on our Steering Arrive
+        // TODO 6: Create a fake position to represent
+        // enemies predicted movement. Then call Steer()
+        // on our Steering Arrive
+        Vector3 prediction = target + (velocity * max_prediction);
+
+        arrive.Steer(prediction);
 	}
 }
