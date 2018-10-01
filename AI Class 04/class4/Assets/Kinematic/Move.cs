@@ -61,8 +61,7 @@ public class Move : MonoBehaviour {
 		// final rotate
 		transform.rotation *= Quaternion.AngleAxis(rotation * Time.deltaTime, Vector3.up);
 
-        // finally move
-        movement.y = 0.0f;
+		// finally move
 		transform.position += movement * Time.deltaTime;
 	}
 }

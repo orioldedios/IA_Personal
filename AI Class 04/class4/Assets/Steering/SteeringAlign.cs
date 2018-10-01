@@ -17,25 +17,31 @@ public class SteeringAlign : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-        // TODO 4: As with arrive, we first construct our ideal rotation
-        // then accelerate to it. Use Mathf.DeltaAngle() to wrap around PI
-        // Is the same as arrive but with angular velocities
+		// Orientation we are trying to match
+		float my_orientation = Mathf.Rad2Deg * Mathf.Atan2(transform.forward.x, transform.forward.z);
+		float target_orientation = Mathf.Rad2Deg * Mathf.Atan2(move.target.transform.forward.x, move.target.transform.forward.z);
+		float diff = Mathf.DeltaAngle(my_orientation, target_orientation); // wrap around PI
 
-        float angle_between = Vector3.Angle(move.movement, move.target.transform.position);
+		float diff_absolute = Mathf.Abs(diff);
 
-        angle_between = Mathf.DeltaAngle(angle_between, angle_between + 180);
+		if(diff_absolute < min_angle)
+		{
+			move.SetRotationVelocity(0.0f);
+			return;
+		}
 
-        if (angle_between < slow_angle)
-        {
-            //Vector3 ideal_w = new Vector3(0.0f, 0.0f, 0.0f);
-            float ideal_w = angle_between / time_to_target;
-            float ideal_a = (ideal_w - move.rotation) / time_to_target;
-            move.AccelerateRotation(Mathf.Clamp(ideal_a,0.0f,move.max_rot_acceleration));
-        }
-        else if(angle_between <= min_angle)
-        {
-            move.SetRotationVelocity(0.0f);
-        }
+		float ideal_rotation = 0.0f;
 
-    }
+		if(diff_absolute > slow_angle)
+			ideal_rotation = move.max_rot_velocity;
+		else
+			ideal_rotation = move.max_rot_velocity * diff_absolute / slow_angle;
+
+		float angular_acceleration = ideal_rotation / time_to_target;
+
+		if(diff < 0)
+			angular_acceleration = -angular_acceleration;
+
+		move.AccelerateRotation(Mathf.Clamp(angular_acceleration, -move.max_rot_acceleration, move.max_rot_acceleration));
+	}
 }

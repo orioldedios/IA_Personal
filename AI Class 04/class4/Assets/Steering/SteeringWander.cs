@@ -3,33 +3,40 @@ using System.Collections;
 
 public class SteeringWander : MonoBehaviour {
 
-	public float min_distance = 0.1f;
-	public float time_to_target = 0.25f;
+	public Vector3 offset = Vector3.zero;
+	public float radius = 1.0f;
+	public float min_update = 0.5f;
+	public float max_update = 3.0f;
 
-	Move move;
+	SteeringSeek seek;
+	Vector3 random_point;
 
 	// Use this for initialization
 	void Start () {
-		move = GetComponent<Move>();
+		seek = GetComponent<SteeringSeek>();
+		ChangeTarget();
 	}
 
 	// Update is called once per frame
-	void Update () 
+	void ChangeTarget () 
 	{
-		Vector3 diff = move.target.transform.position - transform.position;
+		random_point = Random.insideUnitSphere;
+		random_point *= radius;
+		random_point += transform.position + offset;
+		random_point.y = transform.position.y;
 
-		if(diff.magnitude < min_distance)
-			return;
-
-		diff /= time_to_target;
-
-		move.AccelerateMovement(diff);
+		seek.Steer(random_point);
+		Invoke("ChangeTarget", Random.Range(min_update, max_update));
 	}
 
 	void OnDrawGizmosSelected() 
 	{
 		// Display the explosion radius when selected
-		Gizmos.color = Color.white;
-		Gizmos.DrawWireSphere(transform.position, min_distance);
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(transform.position + offset, radius);
+	
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(random_point, 0.2f);
+
 	}
 }
