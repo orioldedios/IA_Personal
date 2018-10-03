@@ -30,7 +30,7 @@ public class SteeringSeparation : MonoBehaviour
 
         Vector3 escape_vector = Vector3.zero;
 
-        Assert.IsTrue(move.transform.position.y != 0.0f);
+        Assert.IsTrue(move.transform.position.y == 0.0f);
 
 
         for (int i = 0; i < tank_colliders.Length; i++)
@@ -43,11 +43,11 @@ public class SteeringSeparation : MonoBehaviour
 
                 escape_vector += distance_vector * -1 * curve;
 
-                Assert.IsTrue(move.transform.position.y != 0.0f);
+                Assert.IsTrue(move.transform.position.y == 0.0f);
 
             }
 
-            Assert.IsTrue(escape_vector.y != 0);
+            Assert.IsTrue(escape_vector.y == 0);
 
             //hardcoded because the fliying error wtf?
             Vector3 hardcoded_vector =  new Vector3(move.transform.position.x,0.0f, move.transform.position.z);

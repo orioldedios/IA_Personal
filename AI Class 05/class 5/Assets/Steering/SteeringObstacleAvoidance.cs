@@ -24,6 +24,8 @@ public class SteeringObstacleAvoidance : MonoBehaviour {
 		// 2- Calculate a quaternion with rotation based on movement vector
 		// 3- Cast all rays. If one hit, get away from that surface using the hitpoint and normal info
 		// 4- Make sure there is debug draw for all rays (below in OnDrawGizmosSelected)
+
+
 	}
 
 	void OnDrawGizmosSelected() 
