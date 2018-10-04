@@ -31,8 +31,7 @@ public class SteeringSeparation : MonoBehaviour
         Vector3 escape_vector = Vector3.zero;
 
         Assert.IsTrue(move.transform.position.y == 0.0f);
-
-
+        
         for (int i = 0; i < tank_colliders.Length; i++)
         {
             if(tank_colliders[i].gameObject.tag != this.tag)
