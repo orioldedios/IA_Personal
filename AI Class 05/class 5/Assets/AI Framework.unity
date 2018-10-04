@@ -1520,7 +1520,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: f698f69d64c51f8438d853e5c274e5fc, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f698f69d64c51f8438d853e5c274e5fc, type: 3}
@@ -2157,7 +2157,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e307cb54b57a59342868ad47d1ed0c30, type: 3}
@@ -3471,6 +3471,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11454982, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: rays.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 412004, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.6
@@ -3589,7 +3593,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: falloff.m_Curve.Array.data[0].value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: falloff.m_Curve.Array.data[0].time
@@ -3597,7 +3601,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: falloff.m_Curve.Array.data[1].value
-      value: 0.0062408447
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: falloff.m_Curve.Array.data[1].time
@@ -3605,15 +3609,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: falloff.m_Curve.Array.data[1].inSlope
-      value: -2.6785307
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: falloff.m_Curve.Array.data[1].outSlope
-      value: -2.6785307
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: falloff.m_Curve.Array.data[1].inWeight
-      value: 0.14166665
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: search_radius
@@ -3634,6 +3638,54 @@ Prefab:
     - target: {fileID: 198852, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
       propertyPath: m_TagString
       value: tank1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: falloff.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: falloff.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: falloff.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: falloff.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499750, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: falloff.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454982, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: rays.Array.data[0].length
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454982, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: rays.Array.data[0].direction.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454982, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: rays.Array.data[0].direction.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454982, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: rays.Array.data[1].length
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454982, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: rays.Array.data[1].direction.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454982, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: rays.Array.data[1].direction.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454982, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
+      propertyPath: mask.m_Bits
+      value: 4608
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11427684, guid: 77aab66f3904942bab33067e31d9d228, type: 2}
@@ -4427,7 +4479,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1579789855}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 612fefe37772540c8bb2bcc1639f521e, type: 3}
   m_Name: 
@@ -4551,22 +4603,22 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.0062408447
-      inSlope: -2.6785307
-      outSlope: -2.6785307
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.14166665
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -4585,6 +4637,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   avoid_distance: 5
+  rays: []
 --- !u!1 &1621344713
 GameObject:
   m_ObjectHideFlags: 0
@@ -5814,6 +5867,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   avoid_distance: 5
+  rays: []
 --- !u!114 &2008602047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5834,22 +5888,22 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.0062408447
-      inSlope: -2.6785307
-      outSlope: -2.6785307
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.14166665
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -5937,7 +5991,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2008602043}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 612fefe37772540c8bb2bcc1639f521e, type: 3}
   m_Name: 
@@ -6126,6 +6180,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   avoid_distance: 5
+  rays: []
 --- !u!114 &2110455563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6146,22 +6201,22 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.0062408447
-      inSlope: -2.6785307
-      outSlope: -2.6785307
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.14166665
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -6249,7 +6304,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2110455559}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 612fefe37772540c8bb2bcc1639f521e, type: 3}
   m_Name: 
