@@ -4,7 +4,10 @@ using System.Collections;
 
 public class Move : MonoBehaviour {
 
-	public GameObject target;
+    private Vector3[] movement_velocity = new Vector3[SteeringConfig.num_priorities];
+    private float[] rotation_movement = new float[SteeringConfig.num_priorities];
+
+    public GameObject target;
 	public GameObject aim;
 	public Slider arrow;
 	public float max_mov_velocity = 5.0f;
@@ -17,32 +20,51 @@ public class Move : MonoBehaviour {
 	public float rotation = 0.0f; // degrees
 
 	// Methods for behaviours to set / add velocities
-	public void SetMovementVelocity (Vector3 velocity) 
+	public void SetMovementVelocity (Vector3 velocity, int priority = 0) 
 	{
-		movement = velocity;
+        movement_velocity[priority] = velocity;
+        //movement = velocity;
+    }
+
+    public void AccelerateMovement (Vector3 velocity, int priority) 
+	{
+        movement_velocity[priority] += velocity;
+        //movement += velocity;
 	}
 
-	public void AccelerateMovement (Vector3 velocity) 
+	public void SetRotationVelocity (float rotation_velocity, int priority = 0) 
 	{
-		movement += velocity;
-	}
+        rotation_movement[priority] = rotation_velocity;
+        //rotation = rotation_velocity;
+    }
 
-	public void SetRotationVelocity (float rotation_velocity) 
+	public void AccelerateRotation (float rotation_acceleration, int priority) 
 	{
-		rotation = rotation_velocity;
-	}
-
-	public void AccelerateRotation (float rotation_acceleration) 
-	{
-		rotation += rotation_acceleration;
-	}
+        rotation_movement[priority] += rotation_acceleration;
+        //rotation += rotation_acceleration;
+    }
 
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		// cap velocity
-		if(movement.magnitude > max_mov_velocity)
+        for (uint i = 0; i < SteeringConfig.num_priorities; i++)
+        {
+            if(movement_velocity[i] != Vector3.zero)
+            {
+                movement += movement_velocity[i];
+                break;
+            }
+
+            if (rotation_movement[i] != 0.0f)
+            {
+                rotation += rotation_movement[i];
+                break;
+            }
+        }
+
+        // cap velocity
+        if (movement.magnitude > max_mov_velocity)
 		{
 			movement.Normalize();
 			movement *= max_mov_velocity;
@@ -63,5 +85,14 @@ public class Move : MonoBehaviour {
 
 		// finally move
 		transform.position += movement * Time.deltaTime;
+
+
+
+        for(uint i = 0;i<SteeringConfig.num_priorities;i++)
+        {
+            movement_velocity[i] = Vector3.zero;
+        }
+
+
 	}
 }

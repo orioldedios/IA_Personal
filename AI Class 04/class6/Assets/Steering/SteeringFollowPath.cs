@@ -3,7 +3,8 @@ using System.Collections;
 using BansheeGz.BGSpline.Components;
 using BansheeGz.BGSpline.Curve;
 
-public class SteeringFollowPath : MonoBehaviour {
+public class SteeringFollowPath : SteeringAbstract
+{
 
 	Move move;
 	SteeringSeek seek;
@@ -32,7 +33,7 @@ public class SteeringFollowPath : MonoBehaviour {
         if ((closest_point - transform.position).magnitude < range)
         {
             
-            distance += 0.1f;
+            distance += 10.01f;
             if((distance / MyPath.GetDistance()) > 1.0f)
             {
                 distance = 0;
