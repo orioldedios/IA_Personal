@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
+  m_Name: FSM_sdf
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.StateMachines.FSM","translation":{"x":-3507.0,"y":-3539.0},"zoomFactor":0.7505029,"nodes":[{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"valueA":{"_name":"Patrol
+    Pos","_targetVariableID":"9a45cfdf-ab75-46c1-99d6-82aaf2098cf7"},"valueB":{"_name":"_currentpos","_targetVariableID":"1ecd9e01-468d-4ab0-b755-62e690250b8a"},"$type":"NodeCanvas.Tasks.Actions.SetVector3"},{"target":{"_value":1},"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"}]},"_position":{"x":5047.0,"y":5045.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[{"targetPosition":{"_name":"Patrol
+    Pos","_targetVariableID":"9a45cfdf-ab75-46c1-99d6-82aaf2098cf7"},"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"$type":"NodeCanvas.Tasks.Actions.MoveToPosition"}]},"_position":{"x":5325.0,"y":5127.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"12"},{"_actionList":{"executionMode":"ActionsRunInParallel","actions":[]},"_position":{"x":5221.0,"y":5248.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"19"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deserializationFailed: 0
